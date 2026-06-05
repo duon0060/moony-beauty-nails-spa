@@ -1,0 +1,254 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+:root {
+  --brand-purple: #3d1d4d;
+  --accent-purple: #834d9b;
+  --light-purple: #f1daf7 ;
+  --light-bg: #fcf9f9;
+}
+
+html {
+  scroll-behavior: smooth;
+    background-color: var(--light-bg);
+
+}
+header{
+
+}
+
+/* Set Playfair Display as the default typography for the whole site */
+body {
+  font-family: 'Playfair Display', Georgia, serif;
+  background-color: var(--light-bg);
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Specific styling for the brand signature text */
+.font-brand {
+  font-family: 'Griffy', cursive;
+}
+
+/* UI text optimization classes */
+.font-sans-ui {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.bg-navbar-custom {
+  background-color: var(--brand-purple) !important;
+}
+
+/* Navigation items using the elegant layout typography */
+.nav-link-custom {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s ease;
+}
+
+.nav-link-custom:hover {
+  color: #f1daf7 !important;
+}
+
+.btn-brand-primary {
+  background-color: var(--accent-purple);
+  color: #ffffff;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 10px 24px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-brand-primary:hover {
+  background-color: #6a3a7f;
+  color: #ffffff;
+}
+
+.btn-brand-dark {
+  background-color: var(--brand-purple);
+  color: #ffffff;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 12px 30px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-brand-dark:hover {
+  background-color: #271232;
+  color: #ffffff;
+}
+
+.price-dots {
+  flex-grow: 1;
+  border-bottom: 2px dashed #e2d7e7;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* Container to hold the text and the flanking lines together */
+.logo-accent-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* Spacing between the lines and the text */
+  width: 100%;
+}
+
+/* The horizontal divider line baseline */
+.brand-divider-line {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 1px;
+  background-color: #d1b9dc; /* Light purple line tint */
+  width: 80px; /* Adjust length of the accent arms here */
+}
+
+/* Diamond elements styling base */
+.diamond-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+}
+
+.diamond {
+  background-color: #a481b5; /* Medium brand purple for diamonds */
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* Accurate sizing variations based on the image pattern */
+.diamond.small {
+  width: 4px;
+  height: 4px;
+}
+
+.diamond.medium {
+  width: 6px;
+  height: 6px;
+}
+
+.diamond.large {
+  width: 9px;
+  height: 9px;
+}
+
+/* Positioning rules to mirror left and right layouts */
+.divider-left .diamond-wrapper {
+  right: 0;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.divider-right .diamond-wrapper {
+  left: 0;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+/* Custom circular carousel controls matching the UI wireframe */
+.carousel-btn-custom {
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e2d7e7 !important;
+  border-radius: 50% !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  opacity: 1 !important;
+  transition: all 0.2s ease;
+}
+
+.carousel-btn-custom:hover {
+  filter: brightness(0.95);
+}
+
+.carousel-btn-custom:hover .carousel-control-prev-icon,
+.carousel-btn-custom:hover .carousel-control-next-icon {
+  filter: invert(1) brightness(100);
+}
+
+.carousel-btn-custom .carousel-control-prev-icon,
+.carousel-btn-custom .carousel-control-next-icon {
+  width: 14px;
+  height: 14px;
+  filter: invert(0.3); /* Dark gray/purple chevron default */
+}
+
+/* Review Indicator Dots matching the bottom center dot tracking */
+.review-indicators [data-bs-target] {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background-color: #b999c9 !important;
+  border: none !important;
+  margin: 0 4px !important;
+}
+
+.review-indicators .active {
+  background-color: #3d1d4d !important;
+}
+
+/* Full bleed hero container matching Screenshot 2026-06-04 at 10.16.06 AM.jpg */
+.hero-bleed-container {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  /* High-res asset matching the hands, dark polish, rings, and soft white fabric */
+  background-image: url('https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* Gradient and soft glassmorphism blur over the text content */
+.hero-blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* Creates a soft fade from solid off-white on the left to transparent on the right */
+  background: linear-gradient(
+    to right,
+    rgba(252, 249, 249, 1) 0%,
+    rgba(252, 249, 249, 0.95) 35%,
+    rgba(252, 249, 249, 0.7) 55%,
+    rgba(252, 249, 249, 0) 100%
+  );
+}
+
+/* Fallback layer for small screens so text stays readable when background layout shifts */
+@media (max-width: 767.98px) {
+  .hero-bleed-container {
+    background-position: 75% center; /* Adjust image crop to keep fingers visible */
+    min-height: 450px;
+  }
+  .hero-blur-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(252, 249, 249, 0.95) 0%,
+      rgba(252, 249, 249, 0.85) 60%,
+      rgba(252, 249, 249, 0.4) 100%
+    );
+    backdrop-filter: blur(4px); /* Extra text protection on tiny screens */
+  }
+}
