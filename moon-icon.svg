@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Moony crescent logo">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4b1f72"/><stop offset="1" stop-color="#b889c8"/></linearGradient></defs>
+  <circle cx="64" cy="64" r="52" fill="url(#g)"/>
+  <circle cx="44" cy="38" r="25" fill="#fffafc"/>
+  <path d="M92 20c-24 9-41 32-41 58 0 14 5 26 12 36C39 105 22 82 22 56 22 30 42 9 68 8c9 0 17 4 24 12z" fill="#fffafc" opacity=".96"/>
+  <path d="M92 12l4 12 12 4-12 4-4 12-4-12-12-4 12-4 4-12z" fill="#d7b4e9"/>
+</svg>
