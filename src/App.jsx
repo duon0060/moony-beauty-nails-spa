@@ -27,6 +27,10 @@ export default function App() {
   const googleReviewUrl =
     "https://search.google.com/local/writereview?placeid=ChIJTT-_6xcRzkwRbdOFGxWbKAo";
 
+  const handleCollapseMenu = () => {
+    window.bootstrap?.Collapse.getInstance("#navbarNav")?.hide();
+  };
+
   return (
     <div>
       {/* Top Desktop Banner Brand Container */}
@@ -74,8 +78,6 @@ export default function App() {
       {/* Responsive Bootstrap Sticky Navbar */}
       <nav className="navbar navbar-expand-md bg-navbar-custom sticky-top shadow-sm py-2">
         <div className="container">
-          {/* Mobile visible branding element */}
-          {/* Mobile visible branding element */}
           <div className="d-md-none text-center">
             <span className="navbar-brand font-brand text-white mb-0 h3 d-block mx-0">
               Moony Beauty
@@ -152,30 +154,54 @@ export default function App() {
             ></span>
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div
+            data-bs-parent="nav"
+            className="collapse navbar-collapse"
+            id="navbarNav"
+          >
             <ul className="navbar-nav mx-auto text-center py-3 py-md-0 gap-3">
               <li className="nav-item">
-                <a className="nav-link nav-link-custom" href="#home">
+                <a
+                  className="nav-link nav-link-custom"
+                  href="#home"
+                  onClick={handleCollapseMenu}
+                >
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link nav-link-custom" href="#services">
+                <a
+                  className="nav-link nav-link-custom"
+                  href="#services"
+                  onClick={handleCollapseMenu}
+                >
                   Services
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link nav-link-custom" href="#prices">
+                <a
+                  className="nav-link nav-link-custom"
+                  href="#prices"
+                  onClick={handleCollapseMenu}
+                >
                   Pricing Menu
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link nav-link-custom" href="#about">
+                <a
+                  className="nav-link nav-link-custom"
+                  href="#about"
+                  onClick={handleCollapseMenu}
+                >
                   About Us
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link nav-link-custom" href="#contact">
+                <a
+                  className="nav-link nav-link-custom"
+                  href="#contact"
+                  onClick={handleCollapseMenu}
+                >
                   Contact
                 </a>
               </li>
