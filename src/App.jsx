@@ -811,7 +811,7 @@ export default function App() {
               ★★★★★
             </div>
 
-            <div className="carousel-inner" style={{ minHeight: 350 }}>
+            <div className="carousel-inner" style={{ minHeight: 400 }}>
               {reviews.map((review, index) => (
                 <div
                   key={review.customer || index}

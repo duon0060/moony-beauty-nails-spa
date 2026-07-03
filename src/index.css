@@ -9,6 +9,7 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--light-bg);
+  overflow-x: hidden;
 
 }
 header{
