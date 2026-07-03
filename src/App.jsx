@@ -1,139 +1,34 @@
 import React from "react";
+import PricingMenu from "./components/PricingMenu";
+import {
+  galleryImages,
+  reviews,
+  servicePrices,
+  socialMedia,
+} from "./data/data.jsx";
 
 export default function App() {
-  const services = [
-    {
-      id: "mani",
-      name: "Manicure",
-      price: "$35+",
-      desc: "Precision nail shaping, detail cuticle care, light hand massage, and high-shine polish finish.",
-      icon: (
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#3d1d4d"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          {/* Finger outline */}
-          <path d="M10 22V8a3 3 0 0 1 6 0v14" />
-          {/* Thumbnail */}
-          <path d="M11.5 8.5a1.5 1.5 0 0 1 3 0V12h-3V8.5z" />
-          {/* Artistic accent swirl */}
-          <path d="M6 16a3 3 0 0 1 3-3c1.5 0 2.5 1 2.5 2.5S10.5 18 9 18c-2 0-3-1.5-3-3.5A5.5 5.5 0 0 1 14.5 9" />
-        </svg>
-      ),
-    },
-    {
-      id: "pedi",
-      name: "Pedicure",
-      price: "$50+",
-      desc: "Relaxing hot herbal foot soak, exfoliating scrub therapy, nail grooming, and deep tissue massage.",
-      icon: (
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#3d1d4d"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          {/* Toe silhouette line */}
-          <path d="M12 22V7a2.5 2.5 0 0 1 5 0v15" />
-          {/* Toenail */}
-          <path d="M13.5 7.5a1 1 0 0 1 2 0V10h-2V7.5z" />
-          {/* Foot contour lines & minor toe indicator */}
-          <path d="M7 18c0-2.5 1.5-3.5 3-3.5M6 14.5A2.5 2.5 0 0 1 8.5 12c1 0 2 .5 2 2" />
-        </svg>
-      ),
-    },
-    {
-      id: "art",
-      name: "Nail Enhancements",
-      price: "$65+",
-      desc: "Full custom acrylics sets, UV gel extension systems, refills, and bespoke modern freehand nail artistry.",
-      icon: (
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#3d1d4d"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          {/* Polish bottle body */}
-          <rect x="8" y="10" width="8" height="11" rx="2" />
-          {/* Bottle neck & cap */}
-          <path d="M10 10V4h4v6" />
-          {/* Fluid level accent line */}
-          <path d="M8 15h8" strokeDasharray="1 1" />
-          {/* Droplet/accent line right side */}
-          <path d="M19 13v4M19 20h.01" />
-        </svg>
-      ),
-    },
-    {
-      id: "wax",
-      name: "Waxing",
-      price: "$20+",
-      desc: "Quick, ultra-clean hair removal treatments specifically structured for brows, lip care, and legs.",
-      icon: (
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#3d1d4d"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          {/* Wax/oil drops structure */}
-          <circle cx="9" cy="15" r="3" />
-          <circle cx="15" cy="15" r="3" />
-          {/* Lotus/vessel handle line above drops */}
-          <path d="M6 9c3-2 5-2 8 0s5 2 8 0" />
-          <path d="M12 4v3" />
-        </svg>
-      ),
-    },
-    {
-      id: "pkg",
-      name: "Spa Packages",
-      price: "$110+",
-      desc: "Combined custom relaxation therapies designed for deep mental unplugging and skin rehydration.",
-      icon: (
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#3d1d4d"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          {/* Center bud */}
-          <path d="M12 21a5 5 0 0 0 5-5c0-4-5-9-5-9s-5 5-5 9a5 5 0 0 0 5 5z" />
-          {/* Left petal */}
-          <path d="M12 12c-2-1-4.5-1-5.5.5S6.2 17 8.5 17c1.5 0 2.5-.5 3.5-1.5" />
-          {/* Right petal */}
-          <path d="M12 12c2-1 4.5-1 5.5.5s.3 4.5-2 4.5c-1.5 0-2.5-.5-3.5-1.5" />
-        </svg>
-      ),
-    },
-  ];
+  const mapsUrl =
+    "https://www.google.com/maps/search/?api=1&query=1989+St+Joseph+Blvd,+Orleans,+ON+K1C+1E5";
+  const bookingUrl =
+    "https://www.dashbooking.com/salon/moony-beauty-nails-and-spa";
+
+  const handleMapClick = () => {
+    window.open(mapsUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const handleBookingClick = () => {
+    window.open(bookingUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const handleClickSocial = (link) => {
+    window.open(link, "_blank", "noopener,noreferrer");
+  };
+  const googleReviewUrl =
+    "https://search.google.com/local/writereview?placeid=ChIJTT-_6xcRzkwRbdOFGxWbKAo";
 
   return (
     <div>
-      {/* Top Desktop Banner Brand Container */}
       {/* Top Desktop Banner Brand Container */}
       <div className="bg-white py-4 text-center d-none d-md-block border-bottom">
         <h1 className="font-brand display-4 mb-0" style={{ color: "#3d1d4d" }}>
@@ -286,7 +181,7 @@ export default function App() {
               </li>
             </ul>
             <div className="d-grid d-md-block text-center mt-2 mt-md-0">
-              <a href="#contact" className="btn btn-brand-primary">
+              <a onClick={handleBookingClick} className="btn btn-brand-primary">
                 Book Now
               </a>
             </div>
@@ -371,7 +266,7 @@ export default function App() {
                 className="btn btn-brand-dark px-4 py-2.5 shadow-sm font-sans-ui"
                 style={{ borderRadius: "4px", fontSize: "0.85rem" }}
               >
-                Book Appointment{" "}
+                Service prices{" "}
                 <span className="ms-1" style={{ fontSize: "0.75rem" }}>
                   &gt;
                 </span>
@@ -395,7 +290,7 @@ export default function App() {
         ></div>
 
         <div className="row g-4 justify-content-center mt-3">
-          {services.map((item) => (
+          {servicePrices.map((item) => (
             <div key={item.id} className="col-6 col-md-2.5 col-lg px-2">
               <div className="bg-white border rounded p-4 h-100 shadow-sm d-flex flex-column align-items-center justify-content-center">
                 {/* Renders the fine-line icon natively */}
@@ -416,7 +311,10 @@ export default function App() {
           ))}
         </div>
       </section>
-      {/* Pricing List Container */}
+
+      <PricingMenu services={servicePrices} />
+
+      {/* Pricing List Container
       <section
         id="prices"
         className="py-5"
@@ -480,7 +378,7 @@ export default function App() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* About Section Block */}
       <section id="about" className="container py-5 my-4">
@@ -507,10 +405,13 @@ export default function App() {
               className="text-muted fw-light mb-4"
               style={{ fontSize: "0.95rem", lineHeight: "1.7" }}
             >
-              At Moony Beauty Nails & Spa, we strongly prioritize consistency
-              and strict sanitization. Our treatment experts utilize top-tier
-              organic polishes and tools to make sure you get the physical
-              restoration you deserve.
+              Moony Beauty Nails & Spa is a welcoming oasis in Ottawa,
+              conveniently located at 1989 St Joseph Blvd. Step into our clean,
+              comfortable space for a relaxing break, routine nail care, or a
+              fresh new look. Our team focuses on attentive, detail-oriented
+              service tailored to your style—whether you love a classic finish
+              or something bold and modern. Visit us today for a premium salon
+              experience close to home!
             </p>
             <a
               href="#prices"
@@ -537,116 +438,246 @@ export default function App() {
             style={{ width: "40px", height: "2px", backgroundColor: "#834d9b" }}
           ></div>
 
-          {/* Multi-Item Desktop & Single Item Mobile Carousel */}
-          <div
-            id="galleryCarousel"
-            className="carousel slide mt-4"
-            data-bs-ride="carousel"
-          >
-            <div className="carousel-inner px-md-5">
-              {/* Slide 1 (Active) */}
-              <div className="carousel-item active">
-                <div className="row g-3 justify-content-center">
-                  <div className="col-12 col-md-4">
+          <div className="position-relative mt-4">
+            {/* 1. MOBILE CAROUSEL (Shows 1 image at a time, displays ALL images) */}
+            <div
+              id="galleryCarouselMobile"
+              className="carousel slide d-md-none"
+              data-bs-ride="carousel"
+            >
+              <div className="carousel-inner">
+                {galleryImages.map((img, index) => (
+                  <div
+                    key={`mobile-${index}`}
+                    className={`carousel-item ${index === 0 ? "active" : ""}`}
+                  >
                     <img
-                      src="https://images.unsplash.com/photo-1604654894610-df490651e0ae?auto=format&fit=crop&w=500&q=80"
-                      alt="Manicure Display 1"
+                      src={img.src}
+                      alt={img.alt}
                       className="img-fluid rounded-3 w-100 object-fit-cover"
-                      style={{ height: "220px" }}
+                      style={{ height: "250px" }}
                     />
                   </div>
-                  <div className="col-12 col-md-4 d-none d-md-block">
-                    <img
-                      src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80"
-                      alt="Pedicure Display 1"
-                      className="img-fluid rounded-3 w-100 object-fit-cover"
-                      style={{ height: "220px" }}
-                    />
-                  </div>
-                  <div className="col-12 col-md-4 d-none d-md-block">
-                    <img
-                      src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80"
-                      alt="Salon Spa Environment"
-                      className="img-fluid rounded-3 w-100 object-fit-cover"
-                      style={{ height: "220px" }}
-                    />
-                  </div>
-                </div>
+                ))}
               </div>
 
-              {/* Slide 2 */}
-              <div className="carousel-item">
-                <div className="row g-3 justify-content-center">
-                  <div className="col-12 col-md-4">
-                    <img
-                      src="https://images.unsplash.com/photo-1632345031435-8797b2d58045?auto=format&fit=crop&w=500&q=80"
-                      alt="Nail Extension Art"
-                      className="img-fluid rounded-3 w-100 object-fit-cover"
-                      style={{ height: "220px" }}
-                    />
-                  </div>
-                  <div className="col-12 col-md-4 d-none d-md-block">
-                    <img
-                      src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=500&q=80"
-                      alt="Cosmetic Waxing Products"
-                      className="img-fluid rounded-3 w-100 object-fit-cover"
-                      style={{ height: "220px" }}
-                    />
-                  </div>
-                  <div className="col-12 col-md-4 d-none d-md-block">
-                    <img
-                      src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80"
-                      alt="Spa Relaxation Treatment"
-                      className="img-fluid rounded-3 w-100 object-fit-cover"
-                      style={{ height: "220px" }}
-                    />
-                  </div>
-                </div>
-              </div>
+              {/* Mobile Controls */}
+              <button
+                className="carousel-control-prev carousel-btn-custom ms-1"
+                type="button"
+                data-bs-target="#galleryCarouselMobile"
+                data-bs-slide="prev"
+              >
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button
+                className="carousel-control-next carousel-btn-custom me-1"
+                type="button"
+                data-bs-target="#galleryCarouselMobile"
+                data-bs-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
 
-            {/* Controls */}
-            <button
-              className="carousel-control-prev carousel-btn-custom ms-md-4"
-              type="button"
-              data-bs-target="#galleryCarousel"
-              data-bs-slide="prev"
+            {/* 2. DESKTOP CAROUSEL (Shows 3 images at a time, perfectly clickable) */}
+            <div
+              id="galleryCarouselDesktop"
+              className="carousel slide d-none d-md-block px-md-5"
+              data-bs-ride="carousel"
             >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next carousel-btn-custom me-md-4"
-              type="button"
-              data-bs-target="#galleryCarousel"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
+              <div className="carousel-inner">
+                {/* Dynamically slice the array into groups of 3 */}
+                {Array.from({
+                  length: Math.ceil(galleryImages.length / 3),
+                }).map((_, slideIndex) => {
+                  const startIdx = slideIndex * 3;
+                  const slideChunk = galleryImages.slice(
+                    startIdx,
+                    startIdx + 3,
+                  );
+
+                  return (
+                    <div
+                      key={`desktop-slide-${slideIndex}`}
+                      className={`carousel-item ${slideIndex === 0 ? "active" : ""}`}
+                    >
+                      <div className="row g-3 justify-content-center">
+                        {slideChunk.map((img, imgIndex) => (
+                          <div
+                            key={`desktop-img-${imgIndex}`}
+                            className="col-4"
+                          >
+                            <img
+                              src={img.src}
+                              alt={img.alt}
+                              className="img-fluid rounded-3 w-100 object-fit-cover"
+                              style={{ height: "250px" }}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Desktop Controls */}
+              <button
+                className="carousel-control-prev carousel-btn-custom ms-md-4"
+                type="button"
+                data-bs-target="#galleryCarouselDesktop"
+                data-bs-slide="prev"
+              >
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button
+                className="carousel-control-next carousel-btn-custom me-md-4"
+                type="button"
+                data-bs-target="#galleryCarouselDesktop"
+                data-bs-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
           </div>
 
-          <div className="mt-4">
-            <a
-              href="#gallery"
+          <div className="mt-5">
+            <button
+              type="button"
               className="btn btn-outline-secondary font-sans-ui px-4 py-2 text-uppercase"
               style={{
                 fontSize: "0.75rem",
                 letterSpacing: "0.1em",
                 borderRadius: "2px",
               }}
+              data-bs-toggle="modal"
+              data-bs-target="#fullGalleryModal"
             >
               View Full Gallery
-            </a>
+            </button>
           </div>
         </div>
       </section>
+
+      {/* --- FULL LOOKBOOK LIGHTBOX MODAL --- */}
+      <div
+        className="modal fade"
+        id="fullGalleryModal"
+        tabIndex="-1"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+          <div
+            className="modal-content border-0 rounded-0 shadow-lg"
+            style={{ backgroundColor: "#ffffff" }}
+          >
+            {/* Modal Header */}
+            <div className="modal-header border-0 px-4 pt-4 pb-2 d-flex justify-content-between align-items-center">
+              <div className="text-start">
+                <span
+                  className="text-uppercase fw-bold small d-block"
+                  style={{
+                    color: "#834d9b",
+                    letterSpacing: "0.15em",
+                    fontSize: "0.7rem",
+                  }}
+                >
+                  Moony Beauty Portfolio
+                </span>
+                <h5
+                  className="modal-title fw-normal mt-1"
+                  style={{
+                    fontFamily: "serif",
+                    fontSize: "1.75rem",
+                    color: "#3d1d4d",
+                    letterSpacing: "0.03em",
+                  }}
+                >
+                  Our Full Lookbook
+                </h5>
+                <div
+                  className="mt-2"
+                  style={{
+                    width: "35px",
+                    height: "1px",
+                    backgroundColor: "#3d1d4d",
+                  }}
+                ></div>
+              </div>
+              <button
+                type="button"
+                className="btn-close rounded-circle p-2"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                style={{ filter: "brightness(0.2)" }}
+              ></button>
+            </div>
+
+            {/* Modal Body with Elegant Gallery Grid */}
+            <div className="modal-body p-4">
+              <div className="row g-3">
+                {galleryImages.map((img, index) => (
+                  <div
+                    key={`modal-gallery-${index}`}
+                    className="col-12 col-sm-4 col-md-3"
+                  >
+                    <div
+                      className="position-relative overflow-hidden gallery-modal-item"
+                      style={{ height: "240px" }}
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="img-fluid w-100 h-100 object-fit-cover transition-all"
+                        loading="lazy"
+                      />
+                      {/* Brand-matching Elegant Tint Overlay */}
+                      <div className="gallery-item-overlay">
+                        <div className="overlay-text-box">
+                          <span
+                            className="text-white text-uppercase small tracking-wider d-block mb-1"
+                            style={{
+                              fontSize: "0.65rem",
+                              letterSpacing: "0.1em",
+                            }}
+                          >
+                            {img.alt}
+                          </span>
+                          <div
+                            className="mx-auto"
+                            style={{
+                              width: "20px",
+                              height: "1px",
+                              backgroundColor: "rgba(255,255,255,0.6)",
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* --- LOVED BY OUR CLIENTS INTERACTIVE CAROUSEL --- */}
       <section
@@ -666,11 +697,10 @@ export default function App() {
               Loved By Our Clients
             </span>
           </div>
-
           {/* Review Carousel Container */}
           <div
             id="reviewCarousel"
-            className="carousel slide carousel-fade bg-white p-4 p-md-5 rounded-3 shadow-sm border border-light text-center"
+            className="carousel slide bg-white p-4 p-md-5 rounded-3 shadow-sm border border-light text-center"
             data-bs-ride="carousel"
           >
             {/* Star Rating Icons Graphic */}
@@ -681,75 +711,38 @@ export default function App() {
               ★★★★★
             </div>
 
-            <div className="carousel-inner">
-              {/* Review Item 1 */}
-              <div className="carousel-item active">
-                <p
-                  className="text-dark fw-normal px-4 px-md-5"
-                  style={{
-                    fontSize: "1.05rem",
-                    fontStyle: "italic",
-                    lineHeight: "1.6",
-                  }}
+            <div className="carousel-inner" style={{ minHeight: 100 }}>
+              {reviews.map((review, index) => (
+                <div
+                  key={review.customer || index}
+                  /* FIXED: Only the first item gets the 'active' class natively */
+                  className={`carousel-item ${index === 0 ? "active" : ""}`}
                 >
-                  "The staff is amazing and so welcoming. My nails look
-                  beautiful every time!"
-                </p>
-                <span
-                  className="d-block text-muted text-uppercase font-sans-ui fw-semibold mt-3"
-                  style={{ fontSize: "0.75rem", letterSpacing: "0.1em" }}
-                >
-                  — Jessica L.
-                </span>
-              </div>
-
-              {/* Review Item 2 */}
-              <div className="carousel-item">
-                <p
-                  className="text-dark fw-normal px-4 px-md-5"
-                  style={{
-                    fontSize: "1.05rem",
-                    fontStyle: "italic",
-                    lineHeight: "1.6",
-                  }}
-                >
-                  "Such a relaxing experience! My nails are perfect and the
-                  service is outstanding."
-                </p>
-                <span
-                  className="d-block text-muted text-uppercase font-sans-ui fw-semibold mt-3"
-                  style={{ fontSize: "0.75rem", letterSpacing: "0.1em" }}
-                >
-                  — Amanda P.
-                </span>
-              </div>
-
-              {/* Review Item 3 */}
-              <div className="carousel-item">
-                <p
-                  className="text-dark fw-normal px-4 px-md-5"
-                  style={{
-                    fontSize: "1.05rem",
-                    fontStyle: "italic",
-                    lineHeight: "1.6",
-                  }}
-                >
-                  "The absolute cleanest salon space in Orleans! Deeply love
-                  their signature pedicures."
-                </p>
-                <span
-                  className="d-block text-muted text-uppercase font-sans-ui fw-semibold mt-3"
-                  style={{ fontSize: "0.75rem", letterSpacing: "0.1em" }}
-                >
-                  — Sarah M.
-                </span>
-              </div>
+                  <p
+                    className="text-dark fw-normal px-4 px-md-5"
+                    style={{
+                      fontSize: "1.05rem",
+                      fontStyle: "italic",
+                      lineHeight: "1.6",
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {review.desc}
+                  </p>
+                  <span
+                    className="d-block text-muted text-uppercase font-sans-ui fw-semibold mt-3"
+                    style={{ fontSize: "0.75rem", letterSpacing: "0.1em" }}
+                  >
+                    {review.customer}
+                  </span>
+                </div>
+              ))}
             </div>
 
             {/* Carousel Arrow Navigation Buttons */}
             <button
               className="carousel-control-prev carousel-btn-custom"
-              style={{ left: "-20px" }}
+              style={{ left: "-20px", position: "absolute", zIndex: 5 }}
               type="button"
               data-bs-target="#reviewCarousel"
               data-bs-slide="prev"
@@ -762,7 +755,7 @@ export default function App() {
             </button>
             <button
               className="carousel-control-next carousel-btn-custom"
-              style={{ right: "-20px" }}
+              style={{ right: "-20px", position: "absolute", zIndex: 5 }}
               type="button"
               data-bs-target="#reviewCarousel"
               data-bs-slide="next"
@@ -775,29 +768,41 @@ export default function App() {
             </button>
 
             {/* Bottom Carousel Track Dot Indicators */}
+            {/* FIXED: Dynamically map dots so the count always matches your data length */}
             <div className="carousel-indicators review-indicators position-relative mb-0 mt-4">
-              <button
-                type="button"
-                data-bs-target="#reviewCarousel"
-                data-bs-slide-to="0"
-                className="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#reviewCarousel"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-              <button
-                type="button"
-                data-bs-target="#reviewCarousel"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
+              {reviews.map((_, index) => (
+                <button
+                  key={`indicator-${index}`}
+                  type="button"
+                  data-bs-target="#reviewCarousel"
+                  data-bs-slide-to={index}
+                  className={index === 0 ? "active" : ""}
+                  aria-current={index === 0 ? "true" : "false"}
+                  aria-label={`Slide ${index + 1}`}
+                ></button>
+              ))}
             </div>
-          </div>
+          </div>{" "}
+          {/* FIXED: Added missing closing div for #reviewCarousel */}
+        </div>{" "}
+        {/* FIXED: Added missing closing div for .container */}
+        <div className="text-center my-4">
+          <a
+            href={googleReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn font-sans-ui text-uppercase px-4 py-2"
+            style={{
+              color: "#3d1d4d",
+              fontSize: "0.75rem",
+              letterSpacing: "0.15em",
+              borderRadius: "0px",
+              border: "1px solid #3d1d4d",
+              transition: "all 0.3s ease",
+            }}
+          >
+            Leave Us A Google Review
+          </a>
         </div>
       </section>
 
@@ -823,9 +828,14 @@ export default function App() {
                 className="d-flex justify-content-center align-items-center col-12 col-md-2"
                 style={{ gap: 15 }}
               >
-                <i className="bi bi-facebook "></i>
-                <i className="bi bi-instagram "></i>
-                <i className="bi bi-tiktok"></i>
+                {socialMedia.map((media) => (
+                  <div
+                    key={media.name}
+                    onClick={() => handleClickSocial(media.link)}
+                  >
+                    <i className={`bi bi-${media.name}`}></i>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -837,13 +847,28 @@ export default function App() {
                 Contact Us
               </h5>
               <p className="small text-white-50 mb-2">
-                <i class="bi bi-telephone"></i> Phone:{" "}
+                <i className="bi bi-telephone"></i> Phone:{" "}
                 <strong>(613) 327-6177</strong>
               </p>
-              <p className="small text-white-50 mb-0">
-                <i class="bi bi-geo-alt"></i> Location:{" "}
-                <strong>Orléans, Ottawa</strong>
-              </p>
+              <div
+                onClick={handleMapClick}
+                style={{
+                  cursor: "pointer",
+                  display: "inline-block",
+                }}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") handleMapClick();
+                }}
+                aria-label="Open 1989 St Joseph Blvd in Google Maps"
+              >
+                {" "}
+                <p className="small text-white-50 mb-0">
+                  <i className="bi bi-geo-alt"></i> Location:{" "}
+                  <strong>Orléans, Ottawa</strong>
+                </p>
+              </div>
             </div>
 
             <div className="col-md-4">

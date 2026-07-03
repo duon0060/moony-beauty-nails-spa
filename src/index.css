@@ -162,17 +162,20 @@ body {
   gap: 8px;
 }
 
-/* Custom circular carousel controls matching the UI wireframe */
+/* Custom Arrow Buttons Styling (Applies perfectly to both viewports) */
 .carousel-btn-custom {
-  width: 40px !important;
-  height: 40px !important;
+  width: 42px !important;
+  height: 42px !important;
   background-color: #ffffff !important;
   border: 1px solid #e2d7e7 !important;
   border-radius: 50% !important;
+  position: absolute !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-  opacity: 1 !important;
-  transition: all 0.2s ease;
+
+  z-index: 10 !important; 
+  opacity: 0.8;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
 .carousel-btn-custom:hover {
@@ -190,6 +193,7 @@ body {
   height: 14px;
   filter: invert(0.3); /* Dark gray/purple chevron default */
 }
+
 
 /* Review Indicator Dots matching the bottom center dot tracking */
 .review-indicators [data-bs-target] {
@@ -236,7 +240,79 @@ body {
   );
 }
 
-/* Fallback layer for small screens so text stays readable when background layout shifts */
+/* --- BRANDED MODAL ARCHITECTURE --- */
+
+/* Match the sharp, elegant aesthetic instead of rounded pill-type cards */
+#fullGalleryModal .modal-content {
+  border-radius: 0px !important;
+}
+
+.gallery-modal-item {
+  border: 1px solid #f8f4f9;
+  border-radius: 0px !important; /* Sharp edges alignment matching buttons */
+}
+
+.gallery-modal-item img {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Luxury smooth scale */
+.gallery-modal-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Semi-transparent Overlay layer matching the navigation header depth */
+.gallery-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(61, 29, 77, 0.45); /* Brand deep wine tint */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  padding: 20px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.gallery-modal-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+/* Micro-animations inside the hover state */
+.overlay-text-box {
+  transform: translateY(10px);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-modal-item:hover .overlay-text-box {
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar styling for the lookbook grid */
+#fullGalleryModal .modal-dialog-scrollable .modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+#fullGalleryModal .modal-dialog-scrollable .modal-body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+#fullGalleryModal .modal-dialog-scrollable .modal-body::-webkit-scrollbar-thumb {
+  background-color: #e6dee8;
+  border-radius: 10px;
+}
+
+.dynamic-gallery-carousel .carousel-item img {
+  display: block;
+  width: 100%;
+}
+
+
 @media (max-width: 767.98px) {
   .hero-bleed-container {
     background-position: 75% center; /* Adjust image crop to keep fingers visible */
@@ -249,6 +325,15 @@ body {
       rgba(252, 249, 249, 0.85) 60%,
       rgba(252, 249, 249, 0.4) 100%
     );
-    backdrop-filter: blur(4px); /* Extra text protection on tiny screens */
+    backdrop-filter: blur(4px);
+  }
+  
+}
+
+@media (min-width: 768px) {
+  #galleryCarouselDesktop .carousel-item {
+    padding: 0 5px; 
   }
 }
+
+
