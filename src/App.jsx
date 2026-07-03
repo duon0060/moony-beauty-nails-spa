@@ -78,7 +78,10 @@ export default function App() {
       {/* Responsive Bootstrap Sticky Navbar */}
       <nav className="navbar navbar-expand-md bg-navbar-custom sticky-top shadow-sm py-2">
         <div className="container">
-          <div className="d-md-none text-center">
+          <div
+            className="d-md-none text-center"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <span className="navbar-brand font-brand text-white mb-0 h3 d-block mx-0">
               Moony Beauty
             </span>
@@ -287,16 +290,43 @@ export default function App() {
                 <br className="d-none d-sm-block" /> Moony Beauty Nails & Spa.
               </p>
 
-              <a
-                href="#prices"
-                className="btn btn-brand-dark px-4 py-2.5 shadow-sm font-sans-ui"
-                style={{ borderRadius: "4px", fontSize: "0.85rem" }}
-              >
-                Service prices{" "}
-                <span className="ms-1" style={{ fontSize: "0.75rem" }}>
-                  &gt;
-                </span>
-              </a>
+              <>
+                {/* 1. DESKTOP VERSION: Visible on tablets and desktops, hidden on mobile */}
+                <a
+                  href="#prices"
+                  className="btn btn-brand-dark px-4 shadow-sm font-sans-ui d-none d-md-inline-flex"
+                  style={{
+                    borderRadius: "4px",
+                    fontSize: "0.85rem",
+                    paddingTop: "0.625rem",
+                    paddingBottom: "0.625rem",
+                    alignItems: "center",
+                  }}
+                >
+                  Service prices
+                  <span className="ms-2" style={{ fontSize: "0.75rem" }}>
+                    &rarr;
+                  </span>
+                </a>
+
+                {/* 2. MOBILE VERSION: Visible on mobile screens, hidden entirely on desktop */}
+                <a
+                  onClick={handleBookingClick}
+                  className="btn btn-brand-primary px-4 shadow-sm font-sans-ui d-inline-flex d-md-none"
+                  style={{
+                    borderRadius: "4px",
+                    fontSize: "0.85rem",
+                    paddingTop: "0.625rem",
+                    paddingBottom: "0.625rem",
+                    alignItems: "center",
+                  }}
+                >
+                  Book Now
+                  <span className="ms-2" style={{ fontSize: "0.75rem" }}>
+                    &rarr;
+                  </span>
+                </a>
+              </>
             </div>
           </div>
         </div>
