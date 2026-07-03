@@ -737,7 +737,7 @@ export default function App() {
               ★★★★★
             </div>
 
-            <div className="carousel-inner" style={{ minHeight: 100 }}>
+            <div className="carousel-inner" style={{ minHeight: 350 }}>
               {reviews.map((review, index) => (
                 <div
                   key={review.customer || index}
@@ -768,7 +768,7 @@ export default function App() {
             {/* Carousel Arrow Navigation Buttons */}
             <button
               className="carousel-control-prev carousel-btn-custom"
-              style={{ left: "-20px", position: "absolute", zIndex: 5 }}
+              style={{ left: "-15px", position: "absolute", zIndex: 5 }}
               type="button"
               data-bs-target="#reviewCarousel"
               data-bs-slide="prev"
@@ -781,7 +781,7 @@ export default function App() {
             </button>
             <button
               className="carousel-control-next carousel-btn-custom"
-              style={{ right: "-20px", position: "absolute", zIndex: 5 }}
+              style={{ right: "-15px", position: "absolute", zIndex: 5 }}
               type="button"
               data-bs-target="#reviewCarousel"
               data-bs-slide="next"
@@ -793,8 +793,6 @@ export default function App() {
               <span className="visually-hidden">Next</span>
             </button>
 
-            {/* Bottom Carousel Track Dot Indicators */}
-            {/* FIXED: Dynamically map dots so the count always matches your data length */}
             <div className="carousel-indicators review-indicators position-relative mb-0 mt-4">
               {reviews.map((_, index) => (
                 <button
@@ -809,9 +807,7 @@ export default function App() {
               ))}
             </div>
           </div>{" "}
-          {/* FIXED: Added missing closing div for #reviewCarousel */}
         </div>{" "}
-        {/* FIXED: Added missing closing div for .container */}
         <div className="text-center my-4">
           <a
             href={googleReviewUrl}
