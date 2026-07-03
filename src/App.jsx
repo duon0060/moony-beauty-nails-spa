@@ -452,7 +452,7 @@ export default function App() {
 
       {/* --- GALLERY PREVIEW INTERACTIVE CAROUSEL --- */}
       <section id="gallery" className="py-5 bg-white">
-        <div className="container text-center">
+        <div className="container text-center" style={{ padding: 0 }}>
           <span
             className="text-uppercase fw-bold text-muted small font-sans-ui"
             style={{ letterSpacing: "0.15em" }}
@@ -465,24 +465,82 @@ export default function App() {
           ></div>
 
           <div className="position-relative mt-4">
-            {/* 1. MOBILE CAROUSEL (Shows 1 image at a time, displays ALL images) */}
             <div
               id="galleryCarouselMobile"
               className="carousel slide d-md-none"
               data-bs-ride="carousel"
+              style={{
+                background: "linear-gradient(180deg, #ffffff 0%, #fcf6fd 100%)",
+                paddingBottom: "2.5rem",
+              }}
             >
+              {/* Carousel Inner Track */}
               <div className="carousel-inner">
                 {galleryImages.map((img, index) => (
                   <div
                     key={`mobile-${index}`}
                     className={`carousel-item ${index === 0 ? "active" : ""}`}
+                    style={{ padding: 0 }}
+                    onClick={(e) => {
+                      const capsule =
+                        e.currentTarget.querySelector(".glass-capsule");
+                      if (capsule)
+                        capsule.classList.toggle("gallery-overlay-hide");
+                    }}
                   >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="img-fluid rounded-3 w-100 object-fit-cover"
-                      style={{ height: "250px" }}
-                    />
+                    {/* Modern Interactive Card Wrapper */}
+                    <div
+                      className="position-relative rounded-1 overflow-hidden shadow-sm border border-light"
+                      style={{
+                        transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+
+                        width: "100%",
+                      }}
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.title}
+                        className="img-fluid w-100 object-fit-cover d-block"
+                        style={{
+                          height: "320px",
+                          filter: "brightness(0.95)",
+                          width: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+
+                      {/* Trendy Frosted Glass Overlay Capsule */}
+                      <div
+                        className="glass-capsule position-absolute bottom-0 start-0 end-0 m-3 p-3 rounded-3"
+                        style={{
+                          background: "rgba(255, 255, 255, 0.75)",
+                          backdropFilter: "blur(2px)",
+                          WebkitBackdropFilter: "blur(2px)",
+                          border: "1px solid rgba(255, 255, 255, 0.4)",
+                          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.03)",
+                        }}
+                      >
+                        <div className="d-flex justify-content-between align-items-center">
+                          <div>
+                            <p
+                              className="m-0 fw-semibold text-dark"
+                              style={{
+                                fontSize: "0.85rem",
+                                letterSpacing: "0.02em",
+                              }}
+                            >
+                              {img.title || "Signature Style"}
+                            </p>
+                            <p
+                              className="m-0 text-muted"
+                              style={{ fontSize: "0.7rem", textAlign: "start" }}
+                            >
+                              {img.tag || "Luxury Service"}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -512,6 +570,22 @@ export default function App() {
                 ></span>
                 <span className="visually-hidden">Next</span>
               </button>
+
+              {/* Bottom Carousel Track Dot Indicators */}
+              <div className="carousel-indicators position-relative mb-0 mt-4">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={`gallery-indicator-${index}`}
+                    type="button"
+                    data-bs-target="#galleryCarouselMobile"
+                    data-bs-slide-to={index}
+                    /* VANILLA FIX: Bootstrap manages classes entirely after initialization, so only seed the initial state */
+                    className={index === 0 ? "active" : undefined}
+                    aria-current={index === 0 ? "true" : undefined}
+                    aria-label={`Slide ${index + 1}`}
+                  ></button>
+                ))}
+              </div>
             </div>
 
             {/* 2. DESKTOP CAROUSEL (Shows 3 images at a time, perfectly clickable) */}
@@ -544,7 +618,7 @@ export default function App() {
                           >
                             <img
                               src={img.src}
-                              alt={img.alt}
+                              alt={img.title}
                               className="img-fluid rounded-3 w-100 object-fit-cover"
                               style={{ height: "250px" }}
                             />
@@ -670,7 +744,7 @@ export default function App() {
                     >
                       <img
                         src={img.src}
-                        alt={img.alt}
+                        alt={img.title}
                         className="img-fluid w-100 h-100 object-fit-cover transition-all"
                         loading="lazy"
                       />
@@ -684,7 +758,7 @@ export default function App() {
                               letterSpacing: "0.1em",
                             }}
                           >
-                            {img.alt}
+                            {img.title}
                           </span>
                           <div
                             className="mx-auto"

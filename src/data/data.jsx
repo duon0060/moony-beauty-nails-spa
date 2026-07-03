@@ -136,35 +136,35 @@ const servicePrices = [
 const galleryImages = [
   {
     src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80",
-    alt: "Manicure Display 1",
+    title: "Manicure Display",
   },
   {
     src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80",
-    alt: "Pedicure Display 1",
+    title: "Pedicure Display",
   },
   {
     src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80",
-    alt: "Salon Spa Environment",
+    title: "Salon Spa Environment",
   },
   {
     src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=500&q=80",
-    alt: "Nail Extension Art",
+    title: "Nail Extension Art",
   },
   {
     src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=500&q=80",
-    alt: "Cosmetic Waxing Products",
+    title: "Cosmetic Waxing Products",
   },
   {
     src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
-    alt: "Spa Relaxation Treatment",
+    title: "Spa Relaxation Treatment",
   },
   {
     src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
-    alt: "Spa Relaxation Treatment",
+    title: "Spa Relaxation Treatment",
   },
   {
     src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
-    alt: "Spa Relaxation Treatment",
+    title: "Spa Relaxation Treatment",
   },
 ];
 

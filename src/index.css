@@ -162,7 +162,6 @@ body {
   gap: 8px;
 }
 
-/* Custom Arrow Buttons Styling (Applies perfectly to both viewports) */
 .carousel-btn-custom {
   width: 42px !important;
   height: 42px !important;
@@ -170,7 +169,7 @@ body {
   border: 1px solid #e2d7e7 !important;
   border-radius: 50% !important;
   position: absolute !important;
-  top: 50% !important;
+  top: 45% !important;
   transform: translateY(-50%) !important;
 
   z-index: 10 !important; 
@@ -191,7 +190,7 @@ body {
 .carousel-btn-custom .carousel-control-next-icon {
   width: 14px;
   height: 14px;
-  filter: invert(0.3); /* Dark gray/purple chevron default */
+  filter: invert(0.3);
 }
 
 
@@ -312,6 +311,39 @@ body {
   width: 100%;
 }
 
+/* Target the mobile gallery indicators specifically */
+#galleryCarouselMobile .carousel-indicators button {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  opacity: 0.3 !important;
+  background-color: #834d9b !important;
+  border: none !important;
+  margin: 0 4px !important;
+  
+  /* THIS TRIGGERS THE ANIMATION */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* When a dot becomes active, smoothly expand it into a pill */
+#galleryCarouselMobile .carousel-indicators .active {
+  width: 24px !important;
+  border-radius: 10px !important;
+  opacity: 1 !important;
+}
+
+/* Toggling class to smoothly fade out the overlay */
+.gallery-overlay-hide {
+  opacity: 0 !important;
+  pointer-events: none;
+  transform: translateY(10px) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* Ensure the capsule has a base transition */
+.carousel-item .position-absolute {
+  transition: all 0.3s ease-in-out;
+}
 
 @media (max-width: 767.98px) {
   .hero-bleed-container {
