@@ -41,7 +41,7 @@ export default function PricingMenu({ services }) {
 
         {/* --- Category Tabs Navigation --- */}
         <div
-          className="chip-scroll d-flex flex-nowrap gap-2 overflow-auto pb-2"
+          className="chip-scroll d-flex flex-nowrap gap-2 overflow-auto pb-2 d-md-flex flex-md-wrap justify-content-md-start"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",

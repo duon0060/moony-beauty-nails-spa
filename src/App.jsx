@@ -347,7 +347,7 @@ export default function App() {
         ></div>
 
         <div
-          className="d-flex overflow-auto gap-3 py-3 px-1"
+          className="d-flex flex-nowrap overflow-auto d-md-flex flex-md-wrap justify-content-md-center gap-3 py-3 px-1"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
