@@ -3,6 +3,7 @@ import PricingMenu from "./components/PricingMenu";
 import {
   galleryImages,
   reviews,
+  serviceCategories,
   servicePrices,
   socialMedia,
 } from "./data/data.jsx";
@@ -345,24 +346,38 @@ export default function App() {
           style={{ width: "40px", height: "2px", backgroundColor: "#834d9b" }}
         ></div>
 
-        <div className="row g-4 justify-content-center mt-3">
-          {servicePrices.map((item) => (
-            <div key={item.id} className="col-6 col-md-2.5 col-lg px-2">
-              <div className="bg-white border rounded p-4 h-100 shadow-sm d-flex flex-column align-items-center justify-content-center">
-                {/* Renders the fine-line icon natively */}
-                <div
-                  className="mb-3 d-flex align-items-center justify-content-center"
-                  style={{ height: "45px" }}
-                >
-                  {item.icon}
-                </div>
-                <h6
-                  className="text-uppercase fw-bold text-secondary mb-0"
-                  style={{ fontSize: "0.8rem", letterSpacing: "0.05em" }}
-                >
-                  {item.name}
-                </h6>
+        <div
+          className="d-flex overflow-auto gap-3 py-3 px-1"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
+        >
+          {serviceCategories.map((item) => (
+            <div
+              key={item.id}
+              className="bg-white border rounded-4 shadow-sm flex-shrink-0 text-center"
+              style={{
+                width: 170,
+                padding: "25px 20px",
+              }}
+            >
+              <div
+                className="d-flex justify-content-center align-items-center mb-3"
+                style={{ height: 55 }}
+              >
+                {item.icon}
               </div>
+
+              <h6
+                className="mb-0"
+                style={{
+                  color: "#6B3F8E",
+                  fontWeight: 600,
+                }}
+              >
+                {item.name}
+              </h6>
             </div>
           ))}
         </div>

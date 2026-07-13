@@ -2,7 +2,7 @@
 :root {
   --brand-purple: #3d1d4d;
   --accent-purple: #834d9b;
-  --light-purple: #f1daf7 ;
+  --light-purple: #f1daf7;
   --light-bg: #fcf9f9;
 }
 
@@ -10,29 +10,32 @@ html {
   scroll-behavior: smooth;
   background-color: var(--light-bg);
   overflow-x: hidden;
-
 }
-header{
-
+header {
 }
 
 /* Set Playfair Display as the default typography for the whole site */
 body {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif;
   background-color: var(--light-bg);
   color: #333333;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* Specific styling for the brand signature text */
 .font-brand {
-  font-family: 'Griffy', cursive;
+  font-family: "Griffy", cursive;
 }
 
 /* UI text optimization classes */
 .font-sans-ui {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .bg-navbar-custom {
@@ -173,9 +176,11 @@ body {
   top: 45% !important;
   transform: translateY(-50%) !important;
 
-  z-index: 10 !important; 
+  z-index: 10 !important;
   opacity: 0.8;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .carousel-btn-custom:hover {
@@ -193,7 +198,6 @@ body {
   height: 14px;
   filter: invert(0.3);
 }
-
 
 /* Review Indicator Dots matching the bottom center dot tracking */
 .review-indicators [data-bs-target] {
@@ -215,7 +219,7 @@ body {
   width: 100%;
   min-height: 500px;
   /* High-res asset matching the hands, dark polish, rings, and soft white fabric */
-  background-image: url('https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=1600&q=80');
+  background-image: url("https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
@@ -298,11 +302,15 @@ body {
   width: 6px;
 }
 
-#fullGalleryModal .modal-dialog-scrollable .modal-body::-webkit-scrollbar-track {
+#fullGalleryModal
+  .modal-dialog-scrollable
+  .modal-body::-webkit-scrollbar-track {
   background: #ffffff;
 }
 
-#fullGalleryModal .modal-dialog-scrollable .modal-body::-webkit-scrollbar-thumb {
+#fullGalleryModal
+  .modal-dialog-scrollable
+  .modal-body::-webkit-scrollbar-thumb {
   background-color: #e6dee8;
   border-radius: 10px;
 }
@@ -321,7 +329,7 @@ body {
   background-color: #834d9b !important;
   border: none !important;
   margin: 0 4px !important;
-  
+
   /* THIS TRIGGERS THE ANIMATION */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
@@ -346,6 +354,10 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.chip-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 @media (max-width: 767.98px) {
   .hero-bleed-container {
     background-position: 75% center; /* Adjust image crop to keep fingers visible */
@@ -360,13 +372,10 @@ body {
     );
     backdrop-filter: blur(4px);
   }
-  
 }
 
 @media (min-width: 768px) {
   #galleryCarouselDesktop .carousel-item {
-    padding: 0 5px; 
+    padding: 0 5px;
   }
 }
-
-

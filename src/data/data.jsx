@@ -1,135 +1,495 @@
-const servicePrices = [
-  {
-    id: "mani",
-    category: "Nails",
-    name: "Manicure",
-    price: "$35+",
-    desc: "Precision nail shaping, detail cuticle care, light hand massage, and high-shine polish finish.",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#3d1d4d"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {/* Finger outline */}
-        <path d="M10 22V8a3 3 0 0 1 6 0v14" />
-        {/* Thumbnail */}
-        <path d="M11.5 8.5a1.5 1.5 0 0 1 3 0V12h-3V8.5z" />
-        {/* Artistic accent swirl */}
-        <path d="M6 16a3 3 0 0 1 3-3c1.5 0 2.5 1 2.5 2.5S10.5 18 9 18c-2 0-3-1.5-3-3.5A5.5 5.5 0 0 1 14.5 9" />
-      </svg>
-    ),
-  },
-  {
-    id: "pedi",
-    name: "Pedicure",
-    category: "Nails",
-    price: "$50+",
-    desc: "Relaxing hot herbal foot soak, exfoliating scrub therapy, nail grooming, and deep tissue massage.",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#3d1d4d"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {/* Toe silhouette line */}
-        <path d="M12 22V7a2.5 2.5 0 0 1 5 0v15" />
-        {/* Toenail */}
-        <path d="M13.5 7.5a1 1 0 0 1 2 0V10h-2V7.5z" />
-        {/* Foot contour lines & minor toe indicator */}
-        <path d="M7 18c0-2.5 1.5-3.5 3-3.5M6 14.5A2.5 2.5 0 0 1 8.5 12c1 0 2 .5 2 2" />
-      </svg>
-    ),
-  },
-  {
-    id: "art",
-    name: "Nail Enhancements",
-    price: "$65+",
-    desc: "Full custom acrylics sets, UV gel extension systems, refills, and bespoke modern freehand nail artistry.",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#3d1d4d"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {/* Polish bottle body */}
-        <rect x="8" y="10" width="8" height="11" rx="2" />
-        {/* Bottle neck & cap */}
-        <path d="M10 10V4h4v6" />
-        {/* Fluid level accent line */}
-        <path d="M8 15h8" strokeDasharray="1 1" />
-        {/* Droplet/accent line right side */}
-        <path d="M19 13v4M19 20h.01" />
-      </svg>
-    ),
-  },
-  {
-    id: "wax",
-    name: "Waxing",
-    category: "Nails",
-    price: "$20+",
-    desc: "Quick, ultra-clean hair removal treatments specifically structured for brows, lip care, and legs.",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#3d1d4d"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {/* Wax/oil drops structure */}
-        <circle cx="9" cy="15" r="3" />
-        <circle cx="15" cy="15" r="3" />
-        {/* Lotus/vessel handle line above drops */}
-        <path d="M6 9c3-2 5-2 8 0s5 2 8 0" />
-        <path d="M12 4v3" />
-      </svg>
-    ),
-  },
-  {
-    id: "pkg",
-    name: "Artificial Nails",
-    category: "Nails",
+import Manicure from "../images/manicure.png";
+import Pedicure from "../images/pedicure.png";
 
-    price: "$110+",
-    desc: "Combined custom relaxation therapies designed for deep mental unplugging and skin rehydration.",
-    icon: (
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#3d1d4d"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        {/* Center bud */}
-        <path d="M12 21a5 5 0 0 0 5-5c0-4-5-9-5-9s-5 5-5 9a5 5 0 0 0 5 5z" />
-        {/* Left petal */}
-        <path d="M12 12c-2-1-4.5-1-5.5.5S6.2 17 8.5 17c1.5 0 2.5-.5 3.5-1.5" />
-        {/* Right petal */}
-        <path d="M12 12c2-1 4.5-1 5.5.5s.3 4.5-2 4.5c-1.5 0-2.5-.5-3.5-1.5" />
-      </svg>
-    ),
+import BioGel from "../images/biogel.png";
+import Acrylic from "../images/acrylic.png";
+import Dip from "../images/dippowder.png";
+import Solar from "../images/solar.png";
+import Art from "../images/artnail.png";
+import Waxing from "../images/waxing.png";
+import Packages from "../images/packages.png";
+
+import Kid from "../images/kid.png";
+
+const serviceCategories = [
+  {
+    id: "manicure",
+    name: "Manicure",
+    icon: <img src={Manicure} alt="Manicure" style={{ width: 30 }} />,
+  },
+
+  {
+    id: "pedicure",
+    name: "Pedicure",
+    icon: <img src={Pedicure} alt="Pedicure" style={{ width: 30 }} />,
+  },
+  {
+    id: "bionail",
+    name: "Bio Nails",
+    icon: <img src={BioGel} alt="bion ail" style={{ width: 30 }} />,
+  },
+  {
+    id: "acrylic",
+    name: "Acrylic Nails",
+    icon: <img src={Acrylic} alt="Acrylic" style={{ width: 100 }} />,
+  },
+  {
+    id: "dippowder",
+    name: "Dip Powder",
+    icon: <img src={Dip} alt="Dip Powder" style={{ width: 90 }} />,
+  },
+  {
+    id: "nailarts",
+    name: "Nail Arts",
+    icon: <img src={Art} alt="Art Nail" style={{ width: 40 }} />,
+  },
+  {
+    id: "waxing",
+    name: "Waxing",
+    icon: <img src={Waxing} alt="Waxing" style={{ width: 60 }} />,
+  },
+  {
+    id: "packages",
+    name: "Packages",
+    icon: <img src={Packages} alt="Packages" style={{ width: 50 }} />,
+  },
+  {
+    id: "solargel",
+    name: "Solar Gel",
+    icon: <img src={Solar} alt="Solar gel" style={{ width: 70 }} />,
+  },
+  {
+    id: "kidservices",
+    name: "Kid Services",
+    icon: <img src={Kid} alt="Kid services" style={{ width: 80 }} />,
+  },
+];
+const servicePrices = [
+  // MANICURE
+  {
+    id: 1,
+    category: "manicure",
+    name: "Classic Manicure",
+    price: "$22",
+    desc: "",
+  },
+  {
+    id: 2,
+    category: "manicure",
+    name: "Shellac Manicure",
+    price: "$38",
+    desc: "",
+  },
+  {
+    id: 5,
+    category: "manicure",
+    name: "Regular Manicure with Shellac Removal",
+    price: "$27",
+    desc: "",
+  },
+  {
+    id: 6,
+    category: "manicure",
+    name: "Manicure Shellac with French Tips",
+    price: "$43",
+    desc: "",
+  },
+  {
+    id: 7,
+    category: "manicure",
+    name: "Shellac Polish Change with Removal",
+    price: "$30",
+    desc: "",
+  },
+
+  // PEDICURE
+  {
+    id: 8,
+    category: "pedicure",
+    name: "Classic Pedicure",
+    price: "$38",
+    desc: "",
+  },
+  {
+    id: 9,
+    category: "pedicure",
+    name: "Pedicure with Shellac Colour",
+    price: "$50",
+    desc: "",
+  },
+  {
+    id: 10,
+    category: "pedicure",
+    name: "Regular Pedicure with Shellac Removal",
+    price: "$43",
+    desc: "",
+  },
+  {
+    id: 13,
+    category: "pedicure",
+    name: "Regular Pedicure Add Deluxe",
+    price: "$58",
+    desc: "",
+  },
+  {
+    id: 14,
+    category: "pedicure",
+    name: "Pedicure with Shellac Colour Add Deluxe",
+    price: "$70",
+    desc: "",
+  },
+
+  // BIOGEL NAILS
+  {
+    id: 15,
+    category: "bionail",
+    name: "BioGel Overlay",
+    price: "$70",
+    desc: "",
+  },
+  {
+    id: 16,
+    category: "bionail",
+    name: "BioGel Extensions",
+    price: "$80",
+    desc: "",
+  },
+  {
+    id: 17,
+    category: "bionail",
+    name: "BioGel Fill",
+    price: "$65",
+    desc: "",
+  },
+  {
+    id: 18,
+    category: "bionail",
+    name: "Polish Change on Artificial Nails",
+    price: "$35",
+    desc: "",
+  },
+
+  // ACRYLIC NAILS
+  {
+    id: 19,
+    category: "acrylic",
+    name: "Acrylic Full Set",
+    price: "$62",
+    desc: "",
+  },
+  {
+    id: 20,
+    category: "acrylic",
+    name: "Acrylic Refill",
+    price: "$50",
+    desc: "",
+  },
+  {
+    id: 21,
+    category: "acrylic",
+    name: "Acrylic Overlay",
+    price: "$55",
+    desc: "",
+  },
+  {
+    id: 22,
+    category: "acrylic",
+    name: "Ombre Acrylic",
+    price: "$70",
+    desc: "",
+  },
+  {
+    id: 23,
+    category: "acrylic",
+    name: "Pink & White",
+    price: "$65",
+    desc: "",
+  },
+
+  // DIP POWDER
+  {
+    id: 24,
+    category: "dippowder",
+    name: "Color Dip",
+    price: "$55",
+    desc: "",
+  },
+  {
+    id: 25,
+    category: "dippowder",
+    name: "Dipping on Natural Nails",
+    price: "$55",
+    desc: "",
+  },
+  {
+    id: 26,
+    category: "dippowder",
+    name: "Dipping with Extension",
+    price: "$65",
+    desc: "",
+  },
+  {
+    id: 27,
+    category: "dippowder",
+    name: "Dipping Nails Removal",
+    price: "$15",
+    desc: "",
+  },
+  {
+    id: 28,
+    category: "dippowder",
+    name: "Dipping Ombre on Natural Nails",
+    price: "$65",
+    desc: "",
+  },
+  {
+    id: 29,
+    category: "dippowder",
+    name: "Dipping Ombre Add Extension",
+    price: "$70",
+    desc: "",
+  },
+
+  // KIDS SERVICES
+  {
+    id: 30,
+    category: "kidservices",
+    name: "Kids Regular Manicure (10Y and Under)",
+    price: "$15",
+    desc: "A polished kids manicure with nail shaping, cuticle care, and a clean finish for well-groomed hands.",
+  },
+  {
+    id: 31,
+    category: "kidservices",
+    name: "Kids Shellac Manicure (10Y and Under)",
+    price: "$25",
+    desc: "",
+  },
+  {
+    id: 61,
+    category: "kidservices",
+    name: "Kids Regular Pedicure (10Y and Under)",
+    price: "$25",
+    desc: "A polished kids pedicure with nail shaping, cuticle care, and a clean finish for well-groomed hands.",
+  },
+
+  {
+    id: 62,
+    category: "kidservices",
+    name: "Kids with Shellac Colour (10Y and Under)",
+    price: "$40",
+    desc: "",
+  },
+
+  // NAIL ART
+  {
+    id: 32,
+    category: "nailarts",
+    name: "French Design",
+    price: "$15",
+    desc: "Creative French design add-on to personalize your nails.",
+  },
+  {
+    id: 33,
+    category: "nailarts",
+    name: "Chrome Nails",
+    price: "$15",
+    desc: "Creative chrome nails add-on to personalize your nails.",
+  },
+  {
+    id: 34,
+    category: "nailarts",
+    name: "Cat Eye",
+    price: "$15",
+    desc: "Creative cat eye add-on to personalize your nails.",
+  },
+
+  // WAXING
+  {
+    id: 35,
+    category: "waxing",
+    name: "Eyebrows",
+    price: "$12",
+    desc: "",
+  },
+  {
+    id: 36,
+    category: "waxing",
+    name: "Eyebrows Tinting",
+    price: "$15",
+    desc: "",
+  },
+  {
+    id: 37,
+    category: "waxing",
+    name: "Sideburn",
+    price: "$12",
+    desc: "",
+  },
+  {
+    id: 38,
+    category: "waxing",
+    name: "Forehead",
+    price: "$10",
+    desc: "",
+  },
+  {
+    id: 39,
+    category: "waxing",
+    name: "Neck",
+    price: "$15",
+    desc: "",
+  },
+  {
+    id: 40,
+    category: "waxing",
+    name: "Full Face (Include Eyebrows)",
+    price: "$45",
+    desc: "",
+  },
+  {
+    id: 41,
+    category: "waxing",
+    name: "Shoulder",
+    price: "$20",
+    desc: "",
+  },
+  {
+    id: 42,
+    category: "waxing",
+    name: "Back",
+    price: "$35",
+    desc: "",
+  },
+  {
+    id: 43,
+    category: "waxing",
+    name: "Chest",
+    price: "$25",
+    desc: "",
+  },
+  {
+    id: 44,
+    category: "waxing",
+    name: "Belly",
+    price: "$25",
+    desc: "",
+  },
+  {
+    id: 45,
+    category: "waxing",
+    name: "Under Arms",
+    price: "$15",
+    desc: "",
+  },
+  {
+    id: 46,
+    category: "waxing",
+    name: "Full Arms",
+    price: "$35",
+    desc: "",
+  },
+  {
+    id: 47,
+    category: "waxing",
+    name: "Half Arms",
+    price: "$25",
+    desc: "",
+  },
+  {
+    id: 48,
+    category: "waxing",
+    name: "Full Legs",
+    price: "$65",
+    desc: "",
+  },
+  {
+    id: 49,
+    category: "waxing",
+    name: "Half Legs",
+    price: "$40",
+    desc: "",
+  },
+  {
+    id: 50,
+    category: "waxing",
+    name: "Bikini",
+    price: "$25",
+    desc: "",
+  },
+  {
+    id: 51,
+    category: "waxing",
+    name: "Brazilian",
+    price: "$50",
+    desc: "",
+  },
+
+  // PACKAGES
+  {
+    id: 52,
+    category: "packages",
+    name: "Combo Pedicure & Manicure (Regular Polish)",
+    price: "$55",
+    desc: "",
+  },
+  {
+    id: 53,
+    category: "packages",
+    name: "Combo Pedicure & Manicure (Shellac Colour)",
+    price: "$80",
+    desc: "",
+  },
+
+  // SOLAR GEL
+  {
+    id: 54,
+    category: "solargel",
+    name: "Solar Gel Full Set",
+    price: "$62",
+    desc: "A durable solar gel full set service with careful prep, shaping, and a glossy long-lasting finish.",
+  },
+  {
+    id: 55,
+    category: "solargel",
+    name: "Solar Gel Fill",
+    price: "$50",
+    desc: "A durable solar gel fill service with careful prep, shaping, and a glossy long-lasting finish.",
+  },
+  {
+    id: 56,
+    category: "solargel",
+    name: "Solar Gel Overlay",
+    price: "$55",
+    desc: "A durable solar gel overlay service with careful prep, shaping, and a glossy long-lasting finish.",
+  },
+  {
+    id: 57,
+    category: "solargel",
+    name: "Solar Gel Ombre",
+    price: "$70",
+    desc: "A durable solar gel ombre service with careful prep, shaping, and a glossy long-lasting finish.",
+  },
+  {
+    id: 58,
+    category: "solargel",
+    name: "Solar Gel Color Change",
+    price: "$35",
+    desc: "A durable solar gel color change service with careful prep, shaping, and a glossy long-lasting finish.",
+  },
+  {
+    id: 59,
+    category: "solargel",
+    name: "Solar Gel Repair (Per Nail)",
+    price: "$7",
+    desc: "Targeted solar gel repair for a broken or damaged nail.",
+  },
+  {
+    id: 60,
+    category: "solargel",
+    name: "Solar Gel Removal",
+    price: "Ask us",
+    desc: "Careful solar gel removal to protect the natural nail and leave nails clean and ready for the next service.",
   },
 ];
 
@@ -206,6 +566,22 @@ const reviews = [
     customer: "- Gaby",
     desc: "If I could give more stars to this team, I would! I always walk out of here feeling pampered and the nails are of very high quality. The team is kind, professional and they keep the place very clean. They have many options to choose from and their price list is clear and exactly as listed. I highly recommend this nail salon as your next choice ….and no this is not sponsored lol. I just really appreciate the service and talent the team offers to our little Orleans!",
   },
+
+  {
+    customer: "- Kris Carisse",
+    desc: "I have been going to Mooneys for approximately three years now. Chloe is my favorite however the owner Lilkian is also very good and quick. I laugh and joje with them which makes my appointments very enjoyable. They are clean, professional and listen to you. Im sure the other staff are great too, however I prefer to stock with Chloe or Lillian. I always look forward to my monthly appointments.",
+  },
+
+  {
+    customer: "- Shrouk Abdelgafar",
+    desc: "Super talented artists! Excellent prices and great customer service. Took my family for a fun girls day and we all got manicures and pedicures. We all left super pampered and really happy with our nails. Definitely recommended!\n\nServices: Pedicure, Manicure, Foot massages, Sculpted nails, Nail extensions",
+  },
 ];
 
-export { servicePrices, galleryImages, socialMedia, reviews };
+export {
+  serviceCategories,
+  servicePrices,
+  galleryImages,
+  socialMedia,
+  reviews,
+};

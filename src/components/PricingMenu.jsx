@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-
-const categories = ["All", "Hair", "Nails", "Facials"];
+import { serviceCategories } from "../data/data";
 
 export default function PricingMenu({ services }) {
-  const [activeTab, setActiveTab] = useState("All");
+  const [activeTab, setActiveTab] = useState("manicure");
 
   // Filter items based on selected tab
-  const filteredServices =
-    activeTab === "All"
-      ? services
-      : services.filter((item) => item.category === activeTab);
+  const filteredServices = services.filter(
+    (item) => item.category === activeTab,
+  );
 
   return (
     <section
@@ -42,25 +40,35 @@ export default function PricingMenu({ services }) {
         </div>
 
         {/* --- Category Tabs Navigation --- */}
-        <div className="d-flex justify-content-center flex-wrap gap-2 mb-4">
-          {categories.map((category) => (
+        <div
+          className="chip-scroll d-flex flex-nowrap gap-2 overflow-auto pb-2"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
+          }}
+        >
+          {serviceCategories.map((category) => (
             <button
-              key={category}
-              onClick={() => setActiveTab(category)}
-              className={`btn btn-sm px-3 py-2 rounded-pill fw-bold transition-all ${
-                activeTab === category
+              key={category.id}
+              onClick={() => setActiveTab(category.id)}
+              className={`btn btn-sm rounded-pill flex-shrink-0 fw-bold ${
+                activeTab === category.id
                   ? "text-white"
-                  : "bg-transparent text-muted border-0"
+                  : "bg-transparent text-muted"
               }`}
               style={{
                 backgroundColor:
-                  activeTab === category ? "#3d1d4d" : "transparent",
+                  activeTab === category.id ? "#3d1d4d" : "transparent",
                 border:
-                  activeTab === category ? "none" : "1px solid transparent",
+                  activeTab === category.id
+                    ? "none"
+                    : "1px solid rgba(0,0,0,.15)",
+                padding: "8px 18px",
                 letterSpacing: "0.05em",
               }}
             >
-              {category}
+              {category.name}
             </button>
           ))}
         </div>
@@ -74,17 +82,17 @@ export default function PricingMenu({ services }) {
           ) : (
             filteredServices.map((item) => (
               <div key={item.id} className="mb-4">
-                <div className="d-flex justify-content-between align-items-end flex-wrap flex-sm-nowrap">
+                <div className="d-flex justify-content-between align-items-end ">
                   <div className="pe-2">
-                    <h5
-                      className="h6 fw-bold mb-1 text-dark text-uppercase"
+                    <h6
+                      className="h6 fw-bold mb-1 text-dark"
                       style={{ letterSpacing: "0.05em" }}
                     >
                       {item.name}
-                    </h5>
+                    </h6>
                     <p
                       className="text-muted fw-light mb-0 small"
-                      style={{ maxWidth: "580px" }}
+                      style={{ maxWidth: "580px", fontSize: 12 }}
                     >
                       {item.desc}
                     </p>
