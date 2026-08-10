@@ -496,52 +496,52 @@ const servicePrices = [
 const galleryImages = [
   {
     id: 1,
-    src: "./images/collection/nail1.png",
+    src: "../images/collection/nail1.png",
     title: "Manicure Display",
   },
   {
     id: 2,
-    src: "./images/collection/nail2.png",
+    src: "../images/collection/nail2.png",
     title: "Classic French Tip",
   },
   {
     id: 3,
-    src: "./images/collection/nail3.png",
+    src: "../images/collection/nail3.png",
     title: "Rose Gold Accent",
   },
   {
     id: 4,
-    src: "./images/collection/nail4.png",
+    src: "../images/collection/nail4.png",
     title: "Matte Pastel Polish",
   },
   {
     id: 5,
-    src: "./images/collection/nail5.png",
+    src: "../images/collection/nail5.png",
     title: "Glitter Gradient Shellac",
   },
   {
     id: 6,
-    src: "./images/collection/nail6.png",
+    src: "../images/collection/nail6.png",
     title: "Floral Nail Art",
   },
   {
     id: 7,
-    src: "./images/collection/nail7.png",
+    src: "../images/collection/nail7.png",
     title: "Deep Emerald Gel",
   },
   {
     id: 8,
-    src: "./images/collection/nail8.png",
+    src: "../images/collection/nail8.png",
     title: "Minimalist Line Design",
   },
   {
     id: 9,
-    src: "./images/collection/nail9.png",
+    src: "../images/collection/nail9.png",
     title: "Summer Ombré Nails",
   },
   {
     id: 10,
-    src: "./images/collection/nail10.png",
+    src: "../images/collection/nail10.png",
     title: "Luxury Rhinestone Set",
   },
   {
@@ -551,47 +551,47 @@ const galleryImages = [
   },
   {
     id: 12,
-    src: "./images/collection/nail12.png",
+    src: "../images/collection/nail12.png",
     title: "Chrome Metallic Polish",
   },
   {
     id: 13,
-    src: "./images/collection/nail13.png",
+    src: "../images/collection/nail13.png",
     title: "Abstract Marble Art",
   },
   {
     id: 14,
-    src: "./images/collection/nail14.png",
+    src: "../images/collection/nail14.png",
     title: "Soft Neutral Polish",
   },
   {
     id: 15,
-    src: "./images/collection/nail15.png",
+    src: "../images/collection/nail15.png",
     title: "Velvet Cat-Eye Gel",
   },
   {
     id: 16,
-    src: "./images/collection/nail16.png",
+    src: "../images/collection/nail16.png",
     title: "Bridal Pearl Accent",
   },
   {
     id: 17,
-    src: "./images/collection/nail17.png",
+    src: "../images/collection/nail17.png",
     title: "Bold Burgundy Manicure",
   },
   {
     id: 18,
-    src: "./images/collection/nail18.png",
+    src: "../images/collection/nail18.png",
     title: "Pastel Swirl Art",
   },
   {
     id: 19,
-    src: "./images/collection/nail19.png",
+    src: "../images/collection/nail19.png",
     title: "Golden Leaf Details",
   },
   {
     id: 20,
-    src: "./images/collection/nail20.png",
+    src: "../images/collection/nail20.png",
     title: "Midnight Blue Gloss",
   },
   // {

@@ -457,7 +457,7 @@ export default function App() {
         <div className="row align-items-center g-5">
           <div className="col-md-6">
             <img
-              src="src/images/collection/nail20.png"
+              src="../images/collection/nail20.png"
               alt="Salon Environment"
               className="img-fluid rounded shadow-sm w-100 object-fit-cover"
               style={{ height: "320px" }}
