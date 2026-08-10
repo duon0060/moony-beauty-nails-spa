@@ -12,8 +12,7 @@ import {
 export default function App() {
   const mapsUrl =
     "https://www.google.com/maps/search/?api=1&query=1989+St+Joseph+Blvd,+Orleans,+ON+K1C+1E5";
-  const bookingUrl =
-    "https://www.dashbooking.com/salon/moony-beauty-nails-and-spa";
+  const bookingUrl = "https://bookmynails.ca/moony-beauty-nails-and-spa";
 
   const handleMapClick = () => {
     window.open(mapsUrl, "_blank", "noopener,noreferrer");
