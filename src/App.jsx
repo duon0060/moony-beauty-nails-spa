@@ -1063,7 +1063,7 @@ export default function App() {
                 {" "}
                 <p className="small text-white-50 mb-0">
                   <i className="bi bi-geo-alt"></i> Location:{" "}
-                  <strong>Orléans, Ottawa</strong>
+                  <strong>1989 St Joseph Blvd, Orléans, Ottawa</strong>
                 </p>
               </div>
             </div>
