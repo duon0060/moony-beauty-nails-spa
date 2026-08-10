@@ -1080,13 +1080,13 @@ export default function App() {
                 style={{ maxWidth: "240px" }}
               >
                 <div className="d-flex justify-content-between mb-1">
-                  <span>Mon - Fri:</span> <span>10:00am - 7:30pm</span>
+                  <span>Mon - Fri:</span> <span>10:00am - 7:00pm</span>
                 </div>
                 <div className="d-flex justify-content-between mb-1">
-                  <span>Saturday:</span> <span>10:00am - 7:00pm</span>
+                  <span>Saturday:</span> <span>10:00am - 6:00pm</span>
                 </div>
                 <div className="d-flex justify-content-between">
-                  <span>Sunday:</span> <span>10:00am - 6:00pm</span>
+                  <span>Sunday:</span> <span>11:00am - 5:00pm</span>
                 </div>
               </div>
             </div>
