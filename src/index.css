@@ -219,7 +219,7 @@ body::-webkit-scrollbar {
   width: 100%;
   min-height: 500px;
   /* High-res asset matching the hands, dark polish, rings, and soft white fabric */
-  background-image: url("./images/hero.png");
+  background-image: url("/images/hero.png");
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
