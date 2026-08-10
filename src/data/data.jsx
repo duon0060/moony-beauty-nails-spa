@@ -495,37 +495,133 @@ const servicePrices = [
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80",
+    id: 1,
+    src: "src/images/collection/nail1.png",
     title: "Manicure Display",
   },
   {
-    src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80",
-    title: "Pedicure Display",
+    id: 2,
+    src: "src/images/collection/nail2.png",
+    title: "Classic French Tip",
   },
   {
-    src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80",
-    title: "Salon Spa Environment",
+    id: 3,
+    src: "src/images/collection/nail3.png",
+    title: "Rose Gold Accent",
   },
   {
-    src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=500&q=80",
-    title: "Nail Extension Art",
+    id: 4,
+    src: "src/images/collection/nail4.png",
+    title: "Matte Pastel Polish",
   },
   {
-    src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=500&q=80",
-    title: "Cosmetic Waxing Products",
+    id: 5,
+    src: "src/images/collection/nail5.png",
+    title: "Glitter Gradient Shellac",
   },
   {
-    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
-    title: "Spa Relaxation Treatment",
+    id: 6,
+    src: "src/images/collection/nail6.png",
+    title: "Floral Nail Art",
   },
   {
-    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
-    title: "Spa Relaxation Treatment",
+    id: 7,
+    src: "src/images/collection/nail7.png",
+    title: "Deep Emerald Gel",
   },
   {
-    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
-    title: "Spa Relaxation Treatment",
+    id: 8,
+    src: "src/images/collection/nail8.png",
+    title: "Minimalist Line Design",
   },
+  {
+    id: 9,
+    src: "src/images/collection/nail9.png",
+    title: "Summer Ombré Nails",
+  },
+  {
+    id: 10,
+    src: "src/images/collection/nail10.png",
+    title: "Luxury Rhinestone Set",
+  },
+  {
+    id: 11,
+    src: "src/images/collection/nail11.png",
+    title: "Blush Pink Pedicure",
+  },
+  {
+    id: 12,
+    src: "src/images/collection/nail12.png",
+    title: "Chrome Metallic Polish",
+  },
+  {
+    id: 13,
+    src: "src/images/collection/nail13.png",
+    title: "Abstract Marble Art",
+  },
+  {
+    id: 14,
+    src: "src/images/collection/nail14.png",
+    title: "Soft Neutral Polish",
+  },
+  {
+    id: 15,
+    src: "src/images/collection/nail15.png",
+    title: "Velvet Cat-Eye Gel",
+  },
+  {
+    id: 16,
+    src: "src/images/collection/nail16.png",
+    title: "Bridal Pearl Accent",
+  },
+  {
+    id: 17,
+    src: "src/images/collection/nail17.png",
+    title: "Bold Burgundy Manicure",
+  },
+  {
+    id: 18,
+    src: "src/images/collection/nail18.png",
+    title: "Pastel Swirl Art",
+  },
+  {
+    id: 19,
+    src: "src/images/collection/nail19.png",
+    title: "Golden Leaf Details",
+  },
+  {
+    id: 20,
+    src: "src/images/collection/nail20.png",
+    title: "Midnight Blue Gloss",
+  },
+  // {
+  //   src: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=500&q=80",
+  //   title: "Pedicure Display",
+  // },
+  // {
+  //   src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80",
+  //   title: "Salon Spa Environment",
+  // },
+  // {
+  //   src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=500&q=80",
+  //   title: "Nail Extension Art",
+  // },
+  // {
+  //   src: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=500&q=80",
+  //   title: "Cosmetic Waxing Products",
+  // },
+  // {
+  //   src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
+  //   title: "Spa Relaxation Treatment",
+  // },
+  // {
+  //   src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
+  //   title: "Spa Relaxation Treatment",
+  // },
+  // {
+  //   src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80",
+  //   title: "Spa Relaxation Treatment",
+  // },
 ];
 
 const socialMedia = [
@@ -578,10 +674,113 @@ const reviews = [
   },
 ];
 
+const faqs = [
+  {
+    id: 1,
+    question: "What should you expect with our manicure & pedicure treatments?",
+    answer:
+      "Expect to be pampered by our friendly and experienced nail specialists and aestheticians. Our mani pedi treatments include exfoliation, nail conditioning, and cuticle treatment. We can help shape your nails and buff them to smooth perfection. If you opt for polish, you’ll also have countless colour options to choose from. If you have any specific requests, we’re here to accommodate!",
+  },
+  {
+    id: 2,
+    question: "How often should you get a manicure or pedicure?",
+    answer:
+      "As often as you like! We like to get a mani pedi every couple of weeks or at least once a month. Dirt starts to accumulate pretty quickly and your nails grow out much faster than you might think. If you want to look and feel your best, we’re here to help – as often as you’d like to use our mani pedi services.",
+  },
+  {
+    id: 3,
+    question: "How long does a Shellac manicure last?",
+    answer:
+      "Shellac manicures are meant to outlast regular nail polish manicures. They have an average lasting time of around 2-3 weeks. This time frame can vary widely depending on how much you use your hands for work, sports, hobbies, etc. But typically, your nails will grow out far before they chip!",
+  },
+  {
+    id: 4,
+    question: "What time should I arrive for my appointment?",
+    answer: (
+      <>
+        We ask that you arrive between 5–10 minutes before your appointment time
+        slot. This will give you plenty of time to check-in and select your
+        polish.
+        <br />
+        <br />
+        We fully understand that sometimes being late is outside your control.
+        We will always do our best to accommodate late arrivals (within 15
+        minutes after your appointment).
+        <br />
+        <br />
+        If you’re visiting Moony Beauty Nails and Spa for the first time, call
+        us at <strong>(613) 327-6177</strong>! We’re happy to answer any
+        questions you may have about our location and parking.
+      </>
+    ),
+  },
+  {
+    id: 5,
+    question: "Can I request a specific nail technician?",
+    answer: (
+      <>
+        Absolutely! At Moony Beauty Nails and Spa, we pride ourselves on
+        customer service and building relationships with our clients. If you’d
+        like to request a particular nail technician for your appointment, we’d
+        be happy to accommodate you as best as possible depending on the
+        technician’s schedule. Just call us at <strong>(613) 327-6177</strong>{" "}
+        and let us know about your requests when you book your appointment!
+      </>
+    ),
+  },
+  {
+    id: 6,
+    question: "What should you know before getting a nail treatment?",
+    answer: (
+      <>
+        Our beauty bar and nail salon is pretty laid-back, friendly, and full of
+        positive vibes. But there are some unwritten rules that you should know
+        about:
+        <ul className="mt-2 mb-0 ps-3">
+          <li>Be respectful of our team and of others</li>
+          <li>If you know what colours you want beforehand, it helps a lot!</li>
+          <li>
+            Try to avoid trimming your nails before your treatment; we’ll take
+            care of it.
+          </li>
+          <li>Enjoy yourself and get ready to relax</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 7,
+    question: "What are the benefits of regular mani pedis?",
+    answer: (
+      <>
+        Manicures and pedicures are often seen as a luxury and as “pampering” as
+        opposed to a necessity. As experts in everything related to your nails,
+        we can think of several excellent reasons to change that mindset. Some
+        of the benefits of getting regular mani pedis include:
+        <ul className="mt-2 mb-0 ps-3">
+          <li>Boosted Nail Health</li>
+          <li>Improved Mental Health</li>
+          <li>Reduced Foot Pain</li>
+          <li>Promoting Healthy Blood Circulation</li>
+          <li>Preventing Nail Infections</li>
+          <li>Enhanced Appearance</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 8,
+    question: "Is there an extra charge for design or nail art?",
+    answer:
+      "Depending on the nail art, we typically charge between $1.20 and $10 per finger for designs or jewels.",
+  },
+];
+
 export {
   serviceCategories,
   servicePrices,
   galleryImages,
   socialMedia,
   reviews,
+  faqs,
 };

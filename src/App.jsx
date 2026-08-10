@@ -1,6 +1,7 @@
 import React from "react";
 import PricingMenu from "./components/PricingMenu";
 import {
+  faqs,
   galleryImages,
   reviews,
   serviceCategories,
@@ -456,7 +457,7 @@ export default function App() {
         <div className="row align-items-center g-5">
           <div className="col-md-6">
             <img
-              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80"
+              src="src/images/collection/nail20.png"
               alt="Salon Environment"
               className="img-fluid rounded shadow-sm w-100 object-fit-cover"
               style={{ height: "320px" }}
@@ -944,6 +945,61 @@ export default function App() {
           >
             Leave Us A Google Review
           </a>
+        </div>
+      </section>
+
+      {/* --- FAQ SECTION --- */}
+      <section
+        id="faq"
+        className="py-5 bg-white"
+        style={{ borderTop: "1px solid #f0e4f5" }}
+      >
+        <div className="container" style={{ maxWidth: "800px" }}>
+          <div className="text-center mb-5">
+            <span
+              className="text-uppercase fw-bold small font-sans-ui d-block mb-2"
+              style={{ color: "#834d9b", letterSpacing: "0.2em" }}
+            >
+              Got Questions?
+            </span>
+            <h2
+              className="fw-bold text-uppercase"
+              style={{ color: "#3d1d4d", letterSpacing: "0.05em" }}
+            >
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="accordion accordion-flush" id="faqAccordion">
+            {faqs.map((faq) => (
+              <div key={faq.id} className="accordion-item border-bottom mb-3">
+                <h3 className="accordion-header" id={`heading-${faq.id}`}>
+                  <button
+                    className="accordion-button collapsed fw-semibold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#collapse-${faq.id}`}
+                    aria-expanded="false"
+                    aria-controls={`collapse-${faq.id}`}
+                    style={{
+                      color: "#3d1d4d",
+                      backgroundColor: "transparent",
+                    }}
+                  >
+                    {faq.question}
+                  </button>
+                </h3>
+                <div
+                  id={`collapse-${faq.id}`}
+                  className="accordion-collapse collapse"
+                  aria-labelledby={`heading-${faq.id}`}
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div className="accordion-body text-muted">{faq.answer}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
