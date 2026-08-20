@@ -218,11 +218,11 @@ body::-webkit-scrollbar {
 .hero-bleed-container {
   position: relative;
   width: 100%;
-  min-height: 500px;
+  min-height: 600px;
   /* High-res asset matching the hands, dark polish, rings, and soft white fabric */
   background-image: url("/images/hero.png");
-  background-size: cover;
-  background-position: right center;
+  background-size: 80%;
+  background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -363,6 +363,7 @@ body::-webkit-scrollbar {
   .hero-bleed-container {
     background-position: 10% 85%;
     min-height: 540px;
+    background-size: cover;
   }
 
   .hero-blur-overlay {

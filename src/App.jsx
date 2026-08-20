@@ -555,7 +555,7 @@ export default function App() {
                       />
 
                       {/* Trendy Frosted Glass Overlay Capsule */}
-                      <div
+                      {/* <div
                         className="glass-capsule position-absolute bottom-0 start-0 end-0 m-3 p-3 rounded-3"
                         style={{
                           background: "rgba(255, 255, 255, 0.75)",
@@ -584,7 +584,7 @@ export default function App() {
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ))}
@@ -794,7 +794,7 @@ export default function App() {
                         loading="lazy"
                       />
                       {/* Brand-matching Elegant Tint Overlay */}
-                      <div className="gallery-item-overlay">
+                      {/* <div className="gallery-item-overlay">
                         <div className="overlay-text-box">
                           <span
                             className="text-white text-uppercase small tracking-wider d-block mb-1"
@@ -814,7 +814,7 @@ export default function App() {
                             }}
                           ></div>
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ))}
