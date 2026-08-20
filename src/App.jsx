@@ -363,7 +363,7 @@ export default function App() {
               }}
             >
               <div
-                className="d-flex justify-content-center align-items-center mb-3"
+                className="image-container d-flex justify-content-center align-items-center mb-3"
                 style={{ height: 55 }}
               >
                 {item.icon}
@@ -454,12 +454,16 @@ export default function App() {
       {/* About Section Block */}
       <section id="about" className="container py-5 my-4">
         <div className="row align-items-center g-5">
-          <div className="col-md-6">
+          <div className="col-md-6 image-container">
             <img
               src="/images/collection/nail20.png"
               alt="Salon Environment"
               className="img-fluid rounded shadow-sm w-100 object-fit-cover"
               style={{ height: "320px" }}
+              onLoad={(e) => {
+                e.currentTarget.classList.add("loaded");
+                e.currentTarget.parentElement.classList.add("is-loaded");
+              }}
             />
           </div>
           <div className="col-md-6 text-center text-md-start">
@@ -535,7 +539,7 @@ export default function App() {
                   >
                     {/* Modern Interactive Card Wrapper */}
                     <div
-                      className="position-relative rounded-1 overflow-hidden shadow-sm border border-light"
+                      className="image-container position-relative rounded-1 overflow-hidden shadow-sm border border-light"
                       style={{
                         transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
 
@@ -546,6 +550,13 @@ export default function App() {
                         src={img.src}
                         alt={img.title}
                         className="img-fluid w-100 object-fit-cover d-block"
+                        loading="lazy"
+                        onLoad={(e) => {
+                          e.currentTarget.classList.add("loaded");
+                          e.currentTarget.parentElement.classList.add(
+                            "is-loaded",
+                          );
+                        }}
                         style={{
                           height: "320px",
                           filter: "brightness(0.95)",
@@ -659,11 +670,18 @@ export default function App() {
                         {slideChunk.map((img, imgIndex) => (
                           <div
                             key={`desktop-img-${imgIndex}`}
-                            className="col-4"
+                            className="col-4 image-container"
                           >
                             <img
                               src={img.src}
                               alt={img.title}
+                              loading="lazy"
+                              onLoad={(e) => {
+                                e.currentTarget.classList.add("loaded");
+                                e.currentTarget.parentElement.classList.add(
+                                  "is-loaded",
+                                );
+                              }}
                               className="img-fluid rounded-3 w-100 object-fit-cover"
                               style={{ height: "250px" }}
                             />
@@ -784,7 +802,7 @@ export default function App() {
                     className="col-12 col-sm-4 col-md-3"
                   >
                     <div
-                      className="position-relative overflow-hidden gallery-modal-item"
+                      className="image-container position-relative overflow-hidden gallery-modal-item"
                       style={{ height: "240px" }}
                     >
                       <img
@@ -792,6 +810,12 @@ export default function App() {
                         alt={img.title}
                         className="img-fluid w-100 h-100 object-fit-cover transition-all"
                         loading="lazy"
+                        onLoad={(e) => {
+                          e.currentTarget.classList.add("loaded");
+                          e.currentTarget.parentElement.classList.add(
+                            "is-loaded",
+                          );
+                        }}
                       />
                       {/* Brand-matching Elegant Tint Overlay */}
                       {/* <div className="gallery-item-overlay">

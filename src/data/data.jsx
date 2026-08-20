@@ -15,53 +15,153 @@ const serviceCategories = [
   {
     id: "manicure",
     name: "Manicure",
-    icon: <img src={Manicure} alt="Manicure" style={{ width: 30 }} />,
+    icon: (
+      <img
+        src={Manicure}
+        alt="Manicure"
+        style={{ width: 30 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
 
   {
     id: "pedicure",
     name: "Pedicure",
-    icon: <img src={Pedicure} alt="Pedicure" style={{ width: 30 }} />,
+    icon: (
+      <img
+        src={Pedicure}
+        alt="Pedicure"
+        style={{ width: 30 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
   {
     id: "bionail",
     name: "Bio Nails",
-    icon: <img src={BioGel} alt="bion ail" style={{ width: 30 }} />,
+    icon: (
+      <img
+        src={BioGel}
+        alt="bion ail"
+        style={{ width: 30 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
   {
     id: "acrylic",
     name: "Acrylic Nails",
-    icon: <img src={Acrylic} alt="Acrylic" style={{ width: 100 }} />,
+    icon: (
+      <img
+        src={Acrylic}
+        alt="Acrylic"
+        style={{ width: 100 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
   {
     id: "dippowder",
     name: "Dip Powder",
-    icon: <img src={Dip} alt="Dip Powder" style={{ width: 90 }} />,
+    icon: (
+      <img
+        src={Dip}
+        alt="Dip Powder"
+        style={{ width: 90 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
   {
     id: "nailarts",
     name: "Nail Arts",
-    icon: <img src={Art} alt="Art Nail" style={{ width: 40 }} />,
+    icon: (
+      <img
+        src={Art}
+        alt="Art Nail"
+        style={{ width: 40 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
   {
     id: "waxing",
     name: "Waxing",
-    icon: <img src={Waxing} alt="Waxing" style={{ width: 60 }} />,
+    icon: (
+      <img
+        src={Waxing}
+        alt="Waxing"
+        style={{ width: 60 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
   {
     id: "packages",
     name: "Packages",
-    icon: <img src={Packages} alt="Packages" style={{ width: 50 }} />,
+    icon: (
+      <img
+        src={Packages}
+        alt="Packages"
+        style={{ width: 50 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
   {
     id: "solargel",
     name: "Solar Gel",
-    icon: <img src={Solar} alt="Solar gel" style={{ width: 70 }} />,
+    icon: (
+      <img
+        src={Solar}
+        alt="Solar gel"
+        style={{ width: 70 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
   {
     id: "kidservices",
     name: "Kid Services",
-    icon: <img src={Kid} alt="Kid services" style={{ width: 80 }} />,
+    icon: (
+      <img
+        src={Kid}
+        alt="Kid services"
+        style={{ width: 80 }}
+        onLoad={(e) => {
+          e.currentTarget.classList.add("loaded");
+          e.currentTarget.parentElement.classList.add("is-loaded");
+        }}
+      />
+    ),
   },
 ];
 const servicePrices = [

@@ -359,6 +359,65 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+/* Base placeholder styling */
+.image-container {
+  background-color: #e9ecef;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem; /* Matches Bootstrap rounded-3 */
+}
+
+/* Optional shimmer effect while loading */
+.image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+/* Remove background color and shimmer as soon as image is loaded */
+.image-container.is-loaded {
+  background-color: transparent !important;
+}
+
+.image-container.is-loaded::before {
+  display: none;
+}
+
+/* Smooth fade-in transition for the image */
+.image-container img {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-container img.loaded {
+  opacity: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 @media (max-width: 767.98px) {
   .hero-bleed-container {
     background-position: 10% 85%;
