@@ -1,0 +1,5 @@
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+  [plugins.inputs]
+    buildDir = "build" # Change to "dist" or "out" if using Vite or Next.js
