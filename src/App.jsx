@@ -11,7 +11,7 @@ import {
 
 export default function App() {
   const mapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=1989+St+Joseph+Blvd,+Orleans,+ON+K1C+1E5";
+    "https://www.google.com/maps/search/?api=1&query=Moony+beauty+nails+and+spa+1989+St+Joseph+Blvd+Orleans+ON+K1C+2K4&query_place_id=ChIJTT-_6xcRzkwRbdOFGxWbKAo";
   const bookingUrl = "https://bookmynails.ca/moony-beauty-nails-and-spa";
 
   const handleMapClick = () => {
